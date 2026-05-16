@@ -9,136 +9,136 @@
 /* Fallback font */
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600&display=swap');
 
-        :root {
-            --measles-dark: #1a0505;
-            --measles-red: #9b0000;
-            --measles-bright: #ff3333;
-            --measles-yellow: #ffd700;
-        }
+:root {
+    --measles-dark: #1a0505;
+    --measles-red: #9b0000;
+    --measles-bright: #ff3333;
+    --measles-yellow: #ffd700;
+}
 
-        body {
-            background-color: var(--measles-dark);
-            color: white;
-            font-family: sans-serif;
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            position: relative;
-        }
+body {
+    background-color: var(--measles-dark);
+    color: white;
+    font-family: sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
 
-        /* --- MEASLES VIRUS BACKGROUND OVERLAY --- */
-        .virus-bg {
-            position: fixed;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            z-index: -1;
-            pointer-events: none;
-            /* SVG representing Measles paramyxovirus with spikes */
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cg opacity='0.2'%3E%3Ccircle cx='100' cy='100' r='40' fill='%239b0000'/%3E%3Ccircle cx='100' cy='100' r='50' fill='none' stroke='%23ff3333' stroke-width='6' stroke-dasharray='4 8' stroke-linecap='round'/%3E%3Ccircle cx='300' cy='250' r='60' fill='%239b0000'/%3E%3Ccircle cx='300' cy='250' r='75' fill='none' stroke='%23ff3333' stroke-width='8' stroke-dasharray='6 12' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='350' r='25' fill='%239b0000'/%3E%3Ccircle cx='50' cy='350' r='32' fill='none' stroke='%23ff3333' stroke-width='4' stroke-dasharray='3 6' stroke-linecap='round'/%3E%3Ccircle cx='350' cy='50' r='20' fill='%239b0000'/%3E%3Ccircle cx='350' cy='50' r='25' fill='none' stroke='%23ff3333' stroke-width='3' stroke-dasharray='2 4' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E");
-            animation: viralDrift 90s linear infinite;
-        }
+/* --- MEASLES VIRUS BACKGROUND OVERLAY --- */
+.virus-bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    pointer-events: none;
+    /* SVG representing Measles paramyxovirus with spikes */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cg opacity='0.2'%3E%3Ccircle cx='100' cy='100' r='40' fill='%239b0000'/%3E%3Ccircle cx='100' cy='100' r='50' fill='none' stroke='%23ff3333' stroke-width='6' stroke-dasharray='4 8' stroke-linecap='round'/%3E%3Ccircle cx='300' cy='250' r='60' fill='%239b0000'/%3E%3Ccircle cx='300' cy='250' r='75' fill='none' stroke='%23ff3333' stroke-width='8' stroke-dasharray='6 12' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='350' r='25' fill='%239b0000'/%3E%3Ccircle cx='50' cy='350' r='32' fill='none' stroke='%23ff3333' stroke-width='4' stroke-dasharray='3 6' stroke-linecap='round'/%3E%3Ccircle cx='350' cy='50' r='20' fill='%239b0000'/%3E%3Ccircle cx='350' cy='50' r='25' fill='none' stroke='%23ff3333' stroke-width='3' stroke-dasharray='2 4' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E");
+    animation: viralDrift 90s linear infinite;
+}
 
-        @keyframes viralDrift {
-            0% { transform: rotate(0deg) translate(0, 0); }
-            50% { transform: rotate(180deg) translate(5%, 5%); }
-            100% { transform: rotate(360deg) translate(0, 0); }
-        }
+@keyframes viralDrift {
+    0% { transform: rotate(0deg) translate(0, 0); }
+    50% { transform: rotate(180deg) translate(5%, 5%); }
+    100% { transform: rotate(360deg) translate(0, 0); }
+}
 
-        /* Ambient glowing gradient behind the content */
-        .ambient-glow {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100vw;
-            height: 100vh;
-            background: radial-gradient(circle at center, rgba(155,0,0,0.2) 0%, transparent 70%);
-            z-index: -2;
-            pointer-events: none;
-        }
+/* Ambient glowing gradient behind the content */
+.ambient-glow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, rgba(155,0,0,0.2) 0%, transparent 70%);
+    z-index: -2;
+    pointer-events: none;
+}
 
-        .canvas-container {
-            width: 100%;
-            max-width: 500px;
-            aspect-ratio: 1 / 1;
-            position: relative;
-            background: #000;
-            border: 4px solid var(--measles-red);
-            cursor: pointer;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.8), 0 0 20px rgba(155,0,0,0.4);
-        }
+.canvas-container {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    background: #000;
+    border: 4px solid var(--measles-red);
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8), 0 0 20px rgba(155,0,0,0.4);
+}
 
-        canvas {
-            width: 100%;
-            height: 100%;
-            display: block;
-            /* Chessboard pattern to show transparency before upload */
-            background-image: linear-gradient(45deg, #222 25%, transparent 25%), 
-                              linear-gradient(-45deg, #222 25%, transparent 25%), 
-                              linear-gradient(45deg, transparent 75%, #222 75%), 
-                              linear-gradient(-45deg, transparent 75%, #222 75%);
-            background-size: 20px 20px;
-            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-        }
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    /* Chessboard pattern to show transparency before upload */
+    background-image: linear-gradient(45deg, #222 25%, transparent 25%), 
+      linear-gradient(-45deg, #222 25%, transparent 25%), 
+      linear-gradient(45deg, transparent 75%, #222 75%), 
+      linear-gradient(-45deg, transparent 75%, #222 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
 
-        .upload-overlay {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0,0,0,0.7);
-            z-index: 10;
-            text-align: center;
-            padding: 20px;
-            transition: opacity 0.3s;
-        }
+.upload-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.7);
+    z-index: 10;
+    text-align: center;
+    padding: 20px;
+    transition: opacity 0.3s;
+}
 
-        .slider-appearance {
-            -webkit-appearance: none;
-            width: 100%;
-            height: 8px;
-            background: #444;
-            border-radius: 5px;
-            outline: none;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
-        }
+.slider-appearance {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #444;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+}
 
-        .slider-appearance::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 20px;
-            height: 20px;
-            background: var(--measles-yellow);
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        }
+.slider-appearance::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--measles-yellow);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
 
-        .control-btn {
-            width: 40px;
-            height: 40px;
-            background: var(--measles-red);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-            flex-shrink: 0;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.2s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        }
-        .control-btn:active {
-            background: #5a0000;
-            transform: translateY(2px);
-            box-shadow: 0 1px 2px rgba(0,0,0,0.3);
-        }
+.control-btn {
+    width: 40px;
+    height: 40px;
+    background: var(--measles-red);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+.control-btn:active {
+    background: #5a0000;
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}

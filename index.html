@@ -19,10 +19,10 @@
     <!-- Browser Warning -->
     <div id="browser-warning" class="fixed inset-0 z-50 hidden bg-black/90 items-center justify-center p-6 text-center backdrop-blur-sm">
         <div class="bg-red-950 p-8 rounded-2xl border border-red-500 max-w-sm shadow-2xl">
-            <h2 class="text-2xl font-bold text-yellow-500 mb-4 uppercase">Open in Browser</h2>
-            <p class="text-gray-300 mb-6">Social media apps often block downloads. For best results:</p>
-            <p class="text-sm bg-black/40 p-3 rounded mb-4 border border-red-900">Tap ⋮ or ... and select "Open in Chrome/Safari"</p>
-            <button onclick="document.getElementById('browser-warning').style.display='none'" class="bg-white text-black px-6 py-2 rounded-full font-bold shadow-lg">I'll do that</button>
+            <h2 class="text-2xl font-bold text-yellow-500 mb-4 uppercase">Browser এ ওপডেন করুন</h2>
+            <p class="text-gray-300 mb-6">সোশ্যাল মিডিয়ার ডিফল্ট ব্রাউজারে ডাউনলোডে সমস্যা হয়। ঠিকভাবে ডাউনলোড করার জন্য:</p>
+            <p class="text-sm bg-black/40 p-3 rounded mb-4 border border-red-900"> ⋮ বা ... বাটনে ট্যাপ করুন এবং "Open in Chrome/Safari" নির্বাচন করুন</p>
+            <button onclick="document.getElementById('browser-warning').style.display='none'" class="bg-white text-black px-6 py-2 rounded-full font-bold shadow-lg">আমি করছি</button>
         </div>
     </div>
 
@@ -52,7 +52,7 @@
             
             <!-- Zoom -->
             <div class="space-y-2">
-                <label class="text-[11px] uppercase font-black text-red-500 tracking-widest">জুম কন্ট্রোল</label>
+                <label class="text-[14px] uppercase font-black text-red-800 tracking-widest">জুম কন্ট্রোল</label>
                 <div class="flex items-center gap-3">
                     <button onclick="adjust('zoom', -0.05)" class="control-btn">−</button>
                     <input type="range" id="zoomSlider" min="0.1" max="5" step="0.01" value="1" class="slider-appearance">
@@ -62,7 +62,7 @@
 
             <!-- X -->
             <div class="space-y-2">
-                <label class="text-[11px] uppercase font-black text-red-500 tracking-widest">ডানে / বামে সরান</label>
+                <label class="text-[14px] uppercase font-black text-red-800 tracking-widest">ডানে / বামে সরান</label>
                 <div class="flex items-center gap-3">
                     <button onclick="adjust('x', -40)" class="control-btn">−</button>
                     <input type="range" id="xSlider" min="-2048" max="2048" value="0" class="slider-appearance">
@@ -72,7 +72,7 @@
 
             <!-- Y -->
             <div class="space-y-2">
-                <label class="text-[11px] uppercase font-black text-red-500 tracking-widest">উপরে / নিচে সরান</label>
+                <label class="text-[14px] uppercase font-black text-red-800 tracking-widest">উপরে / নিচে সরান</label>
                 <div class="flex items-center gap-3">
                     <button onclick="adjust('y', -40)" class="control-btn">−</button>
                     <input type="range" id="ySlider" min="-2048" max="2048" value="0" class="slider-appearance">
