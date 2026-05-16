@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শিশু গণহত্যার বিচার চাই - ফ্রেম</title>
+	<meta property="og:image" content="og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Virus Background Animations -->
+    <div class="ambient-glow"></div>
+    <div class="virus-bg"></div>
+
+    <!-- Browser Warning -->
+    <div id="browser-warning" class="fixed inset-0 z-50 hidden bg-black/90 items-center justify-center p-6 text-center backdrop-blur-sm">
+        <div class="bg-red-950 p-8 rounded-2xl border border-red-500 max-w-sm shadow-2xl">
+            <h2 class="text-2xl font-bold text-yellow-500 mb-4 uppercase">Open in Browser</h2>
+            <p class="text-gray-300 mb-6">Social media apps often block downloads. For best results:</p>
+            <p class="text-sm bg-black/40 p-3 rounded mb-4 border border-red-900">Tap ⋮ or ... and select "Open in Chrome/Safari"</p>
+            <button onclick="document.getElementById('browser-warning').style.display='none'" class="bg-white text-black px-6 py-2 rounded-full font-bold shadow-lg">I'll do that</button>
+        </div>
+    </div>
+
+    <header class="text-center mb-8 mt-4 relative z-10">
+        <h1 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter" style="text-shadow: 4px 4px 0 var(--measles-red);">শিশু গণহত্যার বিচার চাই</h1>
+    </header>
+
+    <main class="w-full max-w-5xl flex flex-col lg:flex-row gap-8 items-center lg:items-start justify-center relative z-10">
+        
+        <!-- UI Frame -->
+        <div class="canvas-container" id="frame-click-target">
+            <div id="upload-hint" class="upload-overlay pointer-events-none">
+                <div class="mb-4 bg-red-600 p-4 rounded-full shadow-[0_0_20px_rgba(255,51,51,0.5)]">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M11 15h2V9h3l-4-5-4 5h3z"/><path d="M20 18H4v-7H2v7c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-7h-2v7z"/></svg>
+                </div>
+                <p class="font-black text-xl uppercase tracking-widest text-white drop-shadow-md">আপনার ছবি আপলোড করুন</p>
+            </div>
+            <canvas id="dpCanvas"></canvas>
+        </div>
+
+        <!-- Hidden input -->
+        <input type="file" id="imageLoader" accept="image/*" class="hidden">
+
+        <!-- Controls -->
+        <!-- Added backdrop-blur-md so the viruses blur when they pass behind the controls -->
+        <div class="w-full max-w-[400px] space-y-6 bg-black/50 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.8)]">
+            
+            <!-- Zoom -->
+            <div class="space-y-2">
+                <label class="text-[11px] uppercase font-black text-red-500 tracking-widest">জুম কন্ট্রোল</label>
+                <div class="flex items-center gap-3">
+                    <button onclick="adjust('zoom', -0.05)" class="control-btn">−</button>
+                    <input type="range" id="zoomSlider" min="0.1" max="5" step="0.01" value="1" class="slider-appearance">
+                    <button onclick="adjust('zoom', 0.05)" class="control-btn">+</button>
+                </div>
+            </div>
+
+            <!-- X -->
+            <div class="space-y-2">
+                <label class="text-[11px] uppercase font-black text-red-500 tracking-widest">ডানে / বামে সরান</label>
+                <div class="flex items-center gap-3">
+                    <button onclick="adjust('x', -40)" class="control-btn">−</button>
+                    <input type="range" id="xSlider" min="-2048" max="2048" value="0" class="slider-appearance">
+                    <button onclick="adjust('x', 40)" class="control-btn">+</button>
+                </div>
+            </div>
+
+            <!-- Y -->
+            <div class="space-y-2">
+                <label class="text-[11px] uppercase font-black text-red-500 tracking-widest">উপরে / নিচে সরান</label>
+                <div class="flex items-center gap-3">
+                    <button onclick="adjust('y', -40)" class="control-btn">−</button>
+                    <input type="range" id="ySlider" min="-2048" max="2048" value="0" class="slider-appearance">
+                    <button onclick="adjust('y', 40)" class="control-btn">+</button>
+                </div>
+            </div>
+
+            <button id="downloadBtn" class="w-full bg-yellow-500 hover:bg-yellow-400 text-black font-black py-4 rounded-xl text-xl uppercase shadow-[0_0_20px_rgba(255,215,0,0.3)] transition-all mt-4 transform active:scale-95">
+                ছবি ডাউনলোড করুন
+            </button>
+        </div>
+    </main>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>
