@@ -72,6 +72,7 @@ function draw() {
 
 let moved = false;
 
+// Desktop
 canvas.addEventListener('mousedown', () => {
     moved = false;
 });
@@ -82,14 +83,7 @@ canvas.addEventListener('mousemove', () => {
     }
 });
 
-canvas.addEventListener('mouseup', () => {
-
-    // Only open file picker if user didn't drag
-    if (!moved) {
-        imageLoader.click();
-    }
-});
-
+// Mobile
 canvas.addEventListener('touchstart', () => {
     moved = false;
 });
@@ -98,9 +92,10 @@ canvas.addEventListener('touchmove', () => {
     moved = true;
 });
 
-canvas.addEventListener('touchend', () => {
+// Open file picker (desktop + mobile)
+canvas.addEventListener('click', () => {
 
-    // Tap only (not drag)
+    // Don't open if user dragged
     if (!moved) {
         imageLoader.click();
     }
