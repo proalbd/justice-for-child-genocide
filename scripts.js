@@ -17,9 +17,8 @@
 
         // --- THE FRAME ---
         frameImg.crossOrigin = "anonymous";
-        // REPLACE this with your frame URL: frameImg.src = 'my-frame.png';
-        frameImg.src = './assets/we-want-justice.png';
-        `);
+        // REPLACE this with your actual PNG frame URL
+        frameImg.src = 'assets/we-want-justice.png';
 
         function draw() {
             // Clear entire canvas to transparent
