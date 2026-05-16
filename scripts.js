@@ -122,7 +122,7 @@ imageLoader.onchange = (e) => {
             userImg = img;
 
             // Fit smallest side to canvas
-            const scale = SIZE / Math.min(img.width, img.height);
+            const scale = (SIZE / Math.min(img.width, img.height)) * 0.92;
 
             state.z = scale;
             state.x = 0;
